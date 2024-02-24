@@ -21,11 +21,13 @@ This repository offers a streamlined solution for deploying local LLM applicatio
    ```
 -----------
 
+
 ### Re-use code for different application
 
 The modular design of this framework permits the creation of diverse LLM applications through prompt customization:
 We can implement minor modifications to get the target application as follows:
-+Prompt Customization for Application: change the prompt to get the desired result. 
+
++ Prompt Customization for Application: change the prompt to get the desired result. 
 ```python
   ## PromptTemplate
     template = """ WRITE THE PROMPT FOR NEW APPLICATION """
