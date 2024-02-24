@@ -3,6 +3,7 @@
 ### Project Overview
 
 This repository offers a streamlined solution for deploying local LLM applications, utilizing the Llama-2-7B model as its backbone, yet it's fully adaptable to any LLM framework. It serves as a prototype for a creative writer application, generating articles from user-defined topics. Its core functionality—prompt-based response generation from the LLM—enables the development of a myriad of applications by simply altering the prompts.
+
 -------
 
 ### How to run
@@ -19,6 +20,7 @@ This repository offers a streamlined solution for deploying local LLM applicatio
    ```python
    streamlit run app.py
    ```
+   
 -----------
 
 
