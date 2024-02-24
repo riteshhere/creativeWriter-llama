@@ -1,0 +1,2 @@
+Download LLM of your choice from huggingface or download the following model:
+https://huggingface.co/BashitAli/llama-2-7b-chat.ggmlv3.q5_K_M
