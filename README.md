@@ -8,15 +8,17 @@ This repository offers a streamlined solution for deploying local LLM applicatio
 
 ### How to run
 1. **Repository Cloning**: Clone the repository to initiate your local setup.
-2. **Virtual Environment**: Establish an isolated environment for dependency management
+2. **Download Model**: Download LLM model from the [HuggingFace](https://huggingface.co/models) and save it in `/models`
+   > Download link: (https://huggingface.co/BashitAli/llama-2-7b-chat.ggmlv3.q5_K_M)
+4. **Virtual Environment**: Establish an isolated environment for dependency management
    ```
    conda create -p env_name python==3.9 -y
    ```
-3. Dependency Installation: Install necessary dependencies using `requirements.txt`
+5. Dependency Installation: Install necessary dependencies using `requirements.txt`
    ```python
    pip install -r requirements.txt
    ```
-4. **Application Initialization**: Launch the application through Streamlit
+6. **Application Initialization**: Launch the application through Streamlit
    ```python
    streamlit run app.py
    ```
