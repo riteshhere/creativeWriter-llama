@@ -5,26 +5,26 @@ import streamlit as st
 
 
 ## Function to get response from LLAMA 2 Model
-def getLlamaResponse(input_text, no_words, blog_style):
+def getLlamaResponse(input_text, no_words, category):
     llm = CTransformers(model = 'models\llama-2-7b-chat.ggmlv3.q8_0.bin',
                         model_type = 'llama',
                         config={'max_new_tokens': 256,
                                 'temperature': 0.01})
     
     ## PromptTemplate
-    template = """Write a  {blog_style} on {input_text} in less than {no_words} words"""
+    template = """Write a  {category} on {input_text} in less than {no_words} words"""
 
-    prompt = PromptTemplate(input_variables = ["input_text", "no_words", "blog_style"],
+    prompt = PromptTemplate(input_variables = ["input_text", "no_words", "category"],
                             template = template)
     
     ## Generate the reponse from the LLama 2 Model
-    respone = llm(prompt.format(blog_style=blog_style,input_text=input_text,no_words=no_words))
+    respone = llm(prompt.format(category=category,input_text=input_text,no_words=no_words))
     print(respone)
     return respone
 
 
 
-st.set_page_config(page_title = "Generate Blog",
+st.set_page_config(page_title = "Generate content",
                     layout='centered',
                     initial_sidebar_state = "collapsed")
 
@@ -37,11 +37,11 @@ col1,col2 = st.columns([5,5])
 with col1:
     no_words = st.text_input('No of words')
 with col2:
-    blog_style = st.selectbox("Category",
+    category = st.selectbox("category",
                               ('Essays', 'Poem', 'Joke', 'Blog'),
                               index=0)
     
 submit = st.button("Generate")
 
 if submit:
-    st.write(getLlamaResponse(input_text, no_words, blog_style))
+    st.write(getLlamaResponse(input_text, no_words, category))
